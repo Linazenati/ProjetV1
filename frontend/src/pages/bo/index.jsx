@@ -1,0 +1,30 @@
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';// Inclut à la fois le JS et Popper.js
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "../../assets/fo/css/style.min.css";  // Import du fichier CSS personnalisé
+import Sidebar from "../../components/bo/Sidebar";  // Import de Dashboard
+import Footer from "../../components/bo/Footer";
+import Topbar from "../../components/bo/Topbar";
+import { Routes, Route } from "react-router-dom"; // Import de Routes et Route
+import "../../assets/css/bo/footer.css";
+import Agent from "./FormAgent"
+import Utilisateurs from "./ListeUtilisateurs"
+
+const Index = () => {
+  return (
+    <>
+      
+      <Topbar/>
+      <Sidebar /> 
+      <div className="bo-main-content">
+        <Routes>
+          <Route path="/agent" element={< Agent />} />
+          <Route path="/utilisateurs" element={< Utilisateurs />} />
+
+      </Routes>
+      </div>
+      <Footer/>
+    </>
+  );
+};
+
+export default Index;
