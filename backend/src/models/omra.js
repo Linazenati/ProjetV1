@@ -27,7 +27,10 @@ module.exports = (sequelize, DataTypes) => {
     dateDepart: DataTypes.DATE,
     duree: DataTypes.INTEGER,
     estPublie: DataTypes.BOOLEAN,
-    status: DataTypes.STRING,
+    status: {
+      type: DataTypes.ENUM('disponible', 'épuisé'),
+      defaultValue: 'disponible'
+    },
     image: DataTypes.STRING,
     id_agent: DataTypes.INTEGER
   }, {
