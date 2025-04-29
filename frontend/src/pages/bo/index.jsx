@@ -8,6 +8,8 @@ import { Routes, Route } from "react-router-dom"; // Import de Routes et Route
 import "../../assets/css/bo/footer.css";
 import Agent from "./FormAgent"
 import Utilisateurs from "./ListeUtilisateurs"
+import Creer_omra from "./creer-omra"
+
 
 const Index = () => {
   return (
@@ -19,6 +21,8 @@ const Index = () => {
         <Routes>
           <Route path="/agent" element={< Agent />} />
           <Route path="/utilisateurs" element={< Utilisateurs />} />
+          <Route path="/agent" element={< Agent />} />
+          <Route path="/Creer-omra" element={<Creer_omra />} />
 
       </Routes>
       </div>
