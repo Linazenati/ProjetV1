@@ -14,10 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     foreignKey: 'id_agent',
     as: 'agent'
     });
-     Omra.hasMany(models.Omra, {
-    foreignKey: 'id_omra',
-    as: 'omra'
-      });
+    
     }
   }
   Omra.init({
@@ -32,7 +29,11 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: 'disponible'
     },
     image: DataTypes.STRING,
-    id_agent: DataTypes.INTEGER
+    id_agent: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    }
+    
   }, {
     sequelize,
     modelName: 'Omra',

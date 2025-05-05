@@ -9,6 +9,7 @@ import "../../assets/css/bo/footer.css";
 import Agent from "./FormAgent"
 import Utilisateurs from "./ListeUtilisateurs"
 import Creer_omra from "./creer-omra"
+import Liste_omra from "./liste_omra"
 
 
 const Index = () => {
@@ -23,6 +24,7 @@ const Index = () => {
           <Route path="/utilisateurs" element={< Utilisateurs />} />
           <Route path="/agent" element={< Agent />} />
           <Route path="/Creer-omra" element={<Creer_omra />} />
+          <Route path="/Liste_omra" element={<Liste_omra />} />
 
       </Routes>
       </div>

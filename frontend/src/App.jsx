@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import { UserProvider} from './contexts/UserContext';
 import Bo from "./pages/bo"
 import Fo from "./pages/fo"
 
-function App() {
+function AppRoutes() {
   return (
      <Router>
       <Routes>
@@ -15,5 +15,15 @@ function App() {
     </Router>
   )
 }
+function App() {
+  return (
+    <UserProvider>
+      <AppRoutes />
+    </UserProvider>
+  );
+}
+
+
+
 
 export default App

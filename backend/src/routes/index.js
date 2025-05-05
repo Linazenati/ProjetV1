@@ -1,13 +1,15 @@
-
+const express = require('express');
+const path = require('path'); // Ajoute cette ligne pour importer le module path
 const utilisateurRouter = require("./utilisateur.router");
 const voyageRouter = require("./voyageorganise.router");
 const facebookRouter = require("./facebook.router");
 const authRouter = require("./auth.router");
 const instagramRouter = require("./instagram.router");
+const omraRouter = require("./omra.router");
 
 
 module.exports = (app) => {
-
+  app.use('/images', express.static(path.join(__dirname, 'public', 'images')));
       // 🔐 Auth (login/register)
     app.use("/api/v1/auth", authRouter);
 
@@ -23,6 +25,10 @@ module.exports = (app) => {
   
       // Routes pour Instagram
     app.use("/api/v1/instagram", instagramRouter); 
+
+    // Omra
+    app.use("/api/v1/omra", omraRouter);
+
 
 
       // 📍 Catch all pour les routes non définies dans /api/v1

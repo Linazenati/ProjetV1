@@ -30,7 +30,7 @@ function Sidebar() {
       icon: "fas fa-kaaba",
       links: [
         { to: "/admin/creer-omra", label: "Créer Omra", icon: "fas fa-plus-square" },
-        { to: "/admin/liste-omra", label: "Liste des Omra", icon: "fas fa-list-alt" },
+        { to: "/admin/Liste_omra", label: "Liste des Omra", icon: "fas fa-list-alt" },
       ],
     },
     {

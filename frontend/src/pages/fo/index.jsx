@@ -15,6 +15,7 @@ import Vols from "./Vols";
 import Visadetudes from "./Visadetudes";
 import VisaTouristique from "./VisaTouristique";
 import Omra from "./Omra";
+import Infos_omra1 from "./Infos_omra1"
 import VoyageOrganisés from "./VoyagesOrganisés"
 import Assurance from"./Assurance"
 import Connexion from "./Connexion"
@@ -36,8 +37,7 @@ const Index = () => {
       "/fo/mail/jqBootstrapValidation.min.js",
       "/fo/mail/contact.js",
       "/fo/js/main.js",
-      "fo/lib/owlcarousel/assets/owl.carousel.min.css",
-      "fo/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+      
     ];
 
     const loadScript = (src) =>
@@ -49,6 +49,8 @@ const Index = () => {
         script.onerror = reject;
         document.body.appendChild(script);
       });
+
+      
 
     // Charger les scripts en séquence pour éviter les erreurs
     (async () => {
@@ -90,6 +92,7 @@ const Index = () => {
        <Route path="/visaDetudes" element={<Visadetudes />} />
         <Route path="/visaTouristique" element={<VisaTouristique />} />
         <Route path="/omra" element={<Omra />} />
+        <Route path="/Infos_omra1" element={<Infos_omra1 />} />
         <Route path="/voyagesOrganisés" element={<VoyageOrganisés />} />
         <Route path="/assurance" element={<Assurance />} />
         <Route path="/inscription" element={<Inscription />} />

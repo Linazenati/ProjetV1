@@ -27,7 +27,7 @@ export const UserProvider = ({ children }) => {
 
   // Fonction pour se déconnecter
   const logout = () => {
-    localStorage.removeItem('user');
+    localStorage.removeItem('session'); // ✅ correspond bien à la clé utilisée dans setUser
     setUserState(null);
   };
 
