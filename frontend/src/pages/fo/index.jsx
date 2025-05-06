@@ -7,7 +7,7 @@ import { UserProvider } from '../../contexts/UserContext';
 import GotoTop from "../../components/fo/GotoTop";
 import Topbar from "../../components/fo/Topbar"
 import Navbar from "../../components/fo/Navbar"
-import Footer from"../../components/fo/Footer"
+import Footer from "../../components/fo/Footer"
 
 import Home from "./Home";
 import Hotels from "./Hotels"
@@ -17,9 +17,10 @@ import VisaTouristique from "./VisaTouristique";
 import Omra from "./Omra";
 import Infos_omra1 from "./Infos_omra1"
 import VoyageOrganisés from "./VoyagesOrganisés"
-import Assurance from"./Assurance"
+import Assurance from "./Assurance"
 import Connexion from "./Connexion"
 import Inscription from "./Inscription"
+import Mon_espace from "./Mon_espace"
 import "../../assets/fo/css/style.min.css"
 
 
@@ -37,7 +38,7 @@ const Index = () => {
       "/fo/mail/jqBootstrapValidation.min.js",
       "/fo/mail/contact.js",
       "/fo/js/main.js",
-      
+
     ];
 
     const loadScript = (src) =>
@@ -50,7 +51,7 @@ const Index = () => {
         document.body.appendChild(script);
       });
 
-      
+
 
     // Charger les scripts en séquence pour éviter les erreurs
     (async () => {
@@ -75,7 +76,7 @@ const Index = () => {
     };
   }, []);
 
-  
+
 
   return (
     <UserProvider>
@@ -89,14 +90,14 @@ const Index = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/hotels" element={<Hotels />} />
         <Route path="/vols" element={<Vols />} />
-       <Route path="/visaDetudes" element={<Visadetudes />} />
+        <Route path="/visaDetudes" element={<Visadetudes />} />
         <Route path="/visaTouristique" element={<VisaTouristique />} />
         <Route path="/omra" element={<Omra />} />
         <Route path="/Infos_omra1" element={<Infos_omra1 />} />
         <Route path="/voyagesOrganisés" element={<VoyageOrganisés />} />
         <Route path="/assurance" element={<Assurance />} />
         <Route path="/inscription" element={<Inscription />} />
-
+        <Route path="/Mon_espace" element={<Mon_espace />} />
         <Route path="/connexion" element={<Connexion />} />
       </Routes>
 

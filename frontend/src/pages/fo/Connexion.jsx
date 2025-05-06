@@ -23,27 +23,29 @@ function Connexion() {
     console.log('Email:', email);
     console.log('Mot de passe:', password);
 
-    try{
-      const response = await authAPI.login({email,password});
+    try {
+      const response = await authAPI.login({ email, password });
       console.log(response.data);
 
       const session = response.data.data;
       const role = session.utilisateur.role;
-      setUser( session );
+      // 🟢 Stockage du token
+      localStorage.setItem("token", response.data.token);
+      setUser(session);
       toast.success("Connexion reussié")
 
       //Redirection après 2 secondes
       setTimeout(() => {
-        if (role == "Utilisateur_inscrit"){
+        if (role == "Utilisateur_inscrit") {
           navigate("/web/Home");
         }
-        else{ //admin et agent
+        else { //admin et agent
           navigate("/admin");
         }
-        
+
       }, 1000);
     }
-    catch(err){
+    catch (err) {
       toast.error("Connexion échouée");
       console.log(err);
     }
